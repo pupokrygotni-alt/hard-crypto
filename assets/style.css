@@ -1,0 +1,213 @@
+/* ============ HARD CRYPTO — общие стили ============ */
+:root{
+  --bg:#070b14;
+  --card:rgba(255,255,255,.04);
+  --border:rgba(255,255,255,.09);
+  --text:#e8ecf4;
+  --muted:#93a0b5;
+  --accent1:#8b5cf6;
+  --accent2:#06b6d4;
+  --up:#34d399;
+  --down:#f87171;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;
+}
+section{max-width:1100px;margin:0 auto;padding:84px 24px;scroll-margin-top:90px}
+
+/* ---------- фон ---------- */
+.orb{position:fixed;border-radius:50%;filter:blur(110px);opacity:.33;z-index:-1;pointer-events:none}
+.orb-1{width:560px;height:560px;background:#6d28d9;top:-160px;left:-120px;animation:drift 18s ease-in-out infinite alternate}
+.orb-2{width:480px;height:480px;background:#0e7490;top:32%;right:-170px;animation:drift 23s ease-in-out infinite alternate-reverse}
+.orb-3{width:430px;height:430px;background:#1e1b4b;bottom:-150px;left:30%;animation:drift 27s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(70px,45px) scale(1.12)}}
+
+/* ---------- шапка ---------- */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,11,20,.75);border-bottom:1px solid var(--border)}
+.nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:26px;padding:14px 24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:.04em;text-decoration:none;color:var(--text);white-space:nowrap}
+.logo-mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;flex-shrink:0}
+.nav-links{margin-left:auto;display:flex;gap:22px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14.5px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#a78bfa}
+
+/* ---------- кнопки ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;transition:.25s;text-decoration:none;border:none;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;box-shadow:0 8px 30px rgba(124,58,237,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(124,58,237,.5)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.05)}
+
+/* ---------- hero ---------- */
+.hero,.page-hero{max-width:1100px;margin:0 auto;text-align:center}
+.hero{padding:96px 24px 70px}
+.page-hero{padding:64px 24px 36px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:999px;padding:7px 16px;color:var(--muted);font-size:13px;background:rgba(255,255,255,.04)}
+h1{font-size:clamp(38px,6vw,62px);line-height:1.12;font-weight:800;margin:22px 0}
+.grad{background:linear-gradient(90deg,#a78bfa 0%,#22d3ee 60%,#34d399 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:640px;margin:0 auto 34px;color:var(--muted);font-size:clamp(16px,2vw,18px)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.stats{display:flex;gap:clamp(28px,6vw,72px);justify-content:center;margin-top:64px;flex-wrap:wrap}
+.stat b{display:block;font-size:clamp(24px,3vw,34px);background:linear-gradient(90deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:13px}
+
+/* ---------- бегущая строка ---------- */
+.ticker{border-block:1px solid var(--border);background:rgba(255,255,255,.02);overflow:hidden;padding:13px 0}
+.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:scroll 45s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.tick{display:inline-flex;align-items:center;gap:10px;padding-right:38px;font-size:13.5px;color:var(--muted)}
+.tick .sym{font-weight:800;color:var(--text)}
+.tick b{font-weight:600;color:var(--text)}
+.tp{font-variant-numeric:tabular-nums}
+.tp.up{color:var(--up)}
+.tp.down{color:var(--down)}
+.tp.flat{color:var(--muted)}
+
+/* ---------- заголовки секций ---------- */
+.kicker{color:#a78bfa;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:700;margin-bottom:10px}
+h2{font-size:clamp(28px,4vw,40px);font-weight:800;line-height:1.2}
+.sec-head{margin-bottom:42px}
+.sec-head p{color:var(--muted);max-width:640px;margin-top:12px}
+
+/* ---------- карточки ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(139,92,246,.45);background:rgba(255,255,255,.06)}
+.card .icon{font-size:26px;width:56px;height:56px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,rgba(139,92,246,.18),rgba(34,211,238,.18));border:1px solid var(--border);margin-bottom:18px}
+.card h3{font-size:19px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:14.5px}
+a.card.link-card{text-decoration:none;color:inherit;display:block}
+.go{color:#22d3ee;font-size:13.5px;font-weight:600;display:inline-block;margin-top:12px}
+
+/* ---------- список монет ---------- */
+.coin-list{border:1px solid var(--border);border-radius:18px;background:var(--card);overflow:hidden}
+.coin-row{display:grid;grid-template-columns:44px minmax(0,2fr) minmax(0,1.1fr) 110px minmax(0,1.2fr);gap:12px;align-items:center;padding:15px 22px;border-top:1px solid var(--border);animation:rowIn .5s ease backwards}
+.coin-row:first-child{border-top:none}
+.coin-row:hover{background:rgba(255,255,255,.045)}
+.coin-row.head{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding-block:12px}
+.rank{color:var(--muted);font-size:13px}
+.coin-id{display:flex;align-items:center;gap:12px;min-width:0}
+.coin-ic{width:34px;height:34px;border-radius:50%;flex-shrink:0}
+img.coin-ic{object-fit:cover}
+.coin-ic.badge{display:grid;place-items:center;font-weight:800;font-size:15px}
+.coin-names{min-width:0}
+.coin-name{font-weight:600;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.coin-sym{color:var(--muted);font-size:12px;text-transform:uppercase}
+.r{text-align:right}
+.price{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.chg{font-weight:600;font-size:13.5px;padding:5px 10px;border-radius:8px;display:inline-block;font-variant-numeric:tabular-nums}
+.chg.up{color:var(--up);background:rgba(52,211,153,.12)}
+.chg.down{color:var(--down);background:rgba(248,113,113,.12)}
+.chg.flat{color:var(--muted);background:rgba(255,255,255,.06)}
+.capv{color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+@keyframes rowIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.skel{height:55px;border-top:1px solid var(--border);display:flex;align-items:center;padding:0 22px;gap:14px}
+.skel .bar{height:12px;border-radius:6px;background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.12),rgba(255,255,255,.05));background-size:200% 100%;animation:shimmer 1.4s linear infinite;flex:1}
+@keyframes shimmer{to{background-position:-200% 0}}
+.src-note{text-align:right;color:var(--muted);font-size:12.5px;margin-top:12px}
+
+/* ---------- шаги ---------- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:.3s}
+.step:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.4);background:rgba(255,255,255,.06)}
+.step .num{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:800;font-size:17px;margin-bottom:18px;color:#fff}
+.step h3{font-size:18px;margin-bottom:10px}
+.step p{color:var(--muted);font-size:14.5px}
+
+/* ---------- предупреждение ---------- */
+.warn{border:1px solid rgba(245,158,11,.35);background:rgba(245,158,11,.07);border-radius:18px;padding:26px 30px;display:flex;gap:16px;align-items:flex-start;margin-top:26px}
+.warn .icon{font-size:24px;flex-shrink:0}
+.warn p{color:#fcd34d;font-size:14.5px}
+.warn b{color:#fde68a}
+
+/* ---------- FAQ ---------- */
+details{border:1px solid var(--border);border-radius:16px;background:var(--card);margin-bottom:12px;overflow:hidden}
+summary{padding:20px 24px;cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background .2s}
+summary:hover{background:rgba(255,255,255,.03)}
+summary::-webkit-details-marker{display:none}
+summary .plus{font-size:20px;color:#a78bfa;flex-shrink:0;transition:transform .3s;line-height:1}
+details[open] .plus{transform:rotate(45deg)}
+details .body{padding:0 24px 20px;color:var(--muted);font-size:14.5px}
+
+/* ---------- формы (конвертер, графики) ---------- */
+label{display:block;font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-weight:600}
+input,select{font-family:inherit;font-size:15px;background:#0d1420;border:1px solid var(--border);color:var(--text);border-radius:12px;padding:13px 16px;width:100%;transition:border-color .2s}
+input:focus,select:focus{outline:none;border-color:var(--accent1)}
+select{cursor:pointer}
+input[readonly]{color:#a7f3d0}
+
+/* ---------- конвертер ---------- */
+.conv-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:30px;max-width:720px;margin:0 auto}
+.conv-row{display:grid;grid-template-columns:1fr 200px;gap:14px}
+.conv-row + .conv-row{margin-top:14px}
+.swap-wrap{display:flex;justify-content:center;margin:16px 0}
+.swap-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--border);background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;font-size:18px;cursor:pointer;transition:transform .35s;flex-shrink:0}
+.swap-btn:hover{transform:rotate(180deg)}
+.conv-result{margin-top:30px;border:1px dashed rgba(139,92,246,.4);background:rgba(139,92,246,.06);border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.conv-result span{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.conv-result b{font-size:clamp(20px,3vw,26px);font-weight:800}
+.conv-hint{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
+.quick-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:20px;align-items:center}
+.q-label{font-size:12.5px;color:var(--muted);font-weight:600}
+.chip{padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:inherit;font-size:13.5px;cursor:pointer;transition:.2s}
+.chip:hover{color:var(--text);border-color:rgba(139,92,246,.5)}
+
+/* ---------- графики ---------- */
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:26px}
+.chart-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.coin-live{display:flex;align-items:center;gap:12px}
+.coin-live .lv-name{font-weight:700;font-size:16px;line-height:1.25}
+.coin-live .lv-sym{color:var(--muted);font-size:12.5px;text-transform:uppercase}
+.coin-live .lv-price{font-weight:800;font-size:clamp(18px,2.6vw,24px);margin-left:10px;font-variant-numeric:tabular-nums}
+.sel-inline{width:auto;min-width:200px}
+.pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.pill{padding:9px 18px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:600;transition:.2s}
+.pill:hover{color:var(--text)}
+.pill.active{background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;border-color:transparent}
+.chart-wrap{position:relative;height:420px}
+.chart-stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:20px;border-top:1px solid var(--border);padding-top:16px}
+.chart-stats div span{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
+.chart-stats div b{font-size:16px;white-space:nowrap}
+.chart-note{color:var(--muted);font-size:13px;margin-top:14px;text-align:center}
+
+/* ---------- квиз ---------- */
+.quiz{max-width:660px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:34px}
+.quiz-progress{font-size:12.5px;color:#22d3ee;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.quiz h3{font-size:21px;margin-bottom:22px;line-height:1.35}
+.q-opt{display:block;width:100%;text-align:left;padding:15px 18px;margin-bottom:10px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);font-family:inherit;font-size:15px;cursor:pointer;transition:.2s}
+.q-opt:hover{border-color:rgba(139,92,246,.5);background:rgba(255,255,255,.06)}
+.q-opt.correct{border-color:rgba(52,211,153,.6);background:rgba(52,211,153,.12);color:var(--up)}
+.q-opt.wrong{border-color:rgba(248,113,113,.6);background:rgba(248,113,113,.1);color:var(--down)}
+.quiz-result{text-align:center;padding:14px 0}
+.quiz-result .score{font-size:46px;font-weight:800;background:linear-gradient(90deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:8px}
+.quiz-result p{color:var(--muted);margin-bottom:20px}
+
+/* ---------- футер ---------- */
+footer{border-top:1px solid var(--border);padding:44px 24px;text-align:center;color:var(--muted);font-size:13.5px}
+footer .foot-logo{font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:.04em}
+
+/* ---------- анимация появления ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media (max-width:760px){
+  .nav-links{display:none}
+  .coin-row{grid-template-columns:30px minmax(0,2fr) 96px 76px;padding:14px 16px}
+  .cap,.cap-col{display:none}
+  .price{font-size:13.5px}
+  .chg{padding:4px 7px;font-size:12px}
+  section{padding:64px 18px}
+  .hero{padding:70px 18px 50px}
+  .page-hero{padding:48px 18px 28px}
+  .conv-row{grid-template-columns:1fr}
+  .chart-wrap{height:320px}
+  .chart-stats{gap:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+}
