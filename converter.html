@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конвертер валют — Hard Crypto</title>
+  <meta name="description" content="Онлайн-конвертер криптовалют: переводите Bitcoin, Ethereum, Toncoin в доллары, евро и рубли — и наоборот, по актуальным курсам.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₿</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html"><span class="logo-mark">H</span>HARD<span class="grad">&nbsp;CRYPTO</span></a>
+      <div class="nav-links">
+        <a href="index.html">Главная</a>
+        <a href="markets.html">Графики</a>
+        <a href="converter.html">Конвертер</a>
+        <a href="guide.html">Гайд</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <a class="btn btn-primary" href="markets.html" style="padding:10px 20px;font-size:14px">Графики</a>
+    </nav>
+  </header>
+
+  <div class="ticker"><div class="ticker-track" id="tickerTrack"><span class="tick">Загружаем курсы…</span></div></div>
+
+  <main id="top">
+    <div class="page-hero">
+      <span class="eyebrow">🔄 Конвертер</span>
+      <h1>Конвертер валют</h1>
+      <p class="lead">Переводите сумму между криптомонетами и фиатными валютами — по курсам в реальном времени.</p>
+    </div>
+
+    <section style="padding-top:16px">
+      <div class="conv-card reveal">
+        <div class="conv-row">
+          <div>
+            <label for="convAmount">Меняю</label>
+            <input id="convAmount" type="text" inputmode="decimal" value="1" autocomplete="off" placeholder="Введите сумму">
+          </div>
+          <div>
+            <label for="convFrom">Из</label>
+            <select id="convFrom"></select>
+          </div>
+        </div>
+        <div class="swap-wrap"><button id="swapBtn" class="swap-btn" title="Поменять валюты местами">⇅</button></div>
+        <div class="conv-row">
+          <div>
+            <label for="convResult">Получаю</label>
+            <input id="convResult" readonly value="—">
+          </div>
+          <div>
+            <label for="convTo">В</label>
+            <select id="convTo"></select>
+          </div>
+        </div>
+        <div class="conv-result">
+          <span>Итого</span>
+          <b id="convResultBig">—</b>
+        </div>
+        <p class="conv-hint" id="convHint">Загружаем курсы…</p>
+      </div>
+
+      <div class="quick-chips reveal">
+        <span class="q-label">Быстрые суммы:</span>
+        <button class="chip" data-a="0.001">0,001</button>
+        <button class="chip" data-a="0.01">0,01</button>
+        <button class="chip" data-a="0.1">0,1</button>
+        <button class="chip" data-a="1">1</button>
+        <button class="chip" data-a="10">10</button>
+        <button class="chip" data-a="100">100</button>
+        <button class="chip" data-a="1000">1000</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-logo">⛏ HARD CRYPTO</div>
+    <p>Конвертер носит информационный характер: реальный курс покупки может отличаться из-за комиссий биржи и спреда.</p>
+    <p style="margin-top:14px">© 2026 Hard Crypto</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
