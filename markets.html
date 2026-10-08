@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Графики цен — Hard Crypto</title>
+  <meta name="description" content="Исторические графики цен криптовалют: Bitcoin, Ethereum, Solana и других. Периоды от недели до года, статистика за период.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₿</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html"><span class="logo-mark">H</span>HARD<span class="grad">&nbsp;CRYPTO</span></a>
+      <div class="nav-links">
+        <a href="index.html">Главная</a>
+        <a href="markets.html">Графики</a>
+        <a href="converter.html">Конвертер</a>
+        <a href="guide.html">Гайд</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <a class="btn btn-primary" href="converter.html" style="padding:10px 20px;font-size:14px">Конвертер</a>
+    </nav>
+  </header>
+
+  <div class="ticker"><div class="ticker-track" id="tickerTrack"><span class="tick">Загружаем курсы…</span></div></div>
+
+  <main id="top">
+    <div class="page-hero">
+      <span class="eyebrow">📈 Графики</span>
+      <h1>Динамика цен</h1>
+      <p class="lead">Исторический график цены ключевой криптовалюты. Выберите монету и период — данные подтянутся автоматически.</p>
+    </div>
+
+    <section style="padding-top:16px">
+      <div class="chart-card reveal">
+        <div class="chart-top">
+          <div class="coin-live" id="liveCoin"></div>
+          <select id="chartCoin" class="sel-inline" aria-label="Выбор монеты"></select>
+        </div>
+        <div class="pill-row" id="rangePills">
+          <button class="pill" data-days="7">7 дней</button>
+          <button class="pill active" data-days="30">30 дней</button>
+          <button class="pill" data-days="90">3 месяца</button>
+          <button class="pill" data-days="365">1 год</button>
+        </div>
+        <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
+        <div class="chart-stats" id="chartStats"></div>
+        <p class="chart-note" id="chartNote">Загружаем график…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-logo">⛏ HARD CRYPTO</div>
+    <p>Сайт носит информационный характер и не является инвестиционной рекомендацией.</p>
+    <p style="margin-top:14px">© 2026 Hard Crypto</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
