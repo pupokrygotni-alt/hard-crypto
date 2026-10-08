@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hard Crypto — криптовалюта без воды</title>
+  <meta name="description" content="Hard Crypto — курсы и графики криптовалют, конвертер валют, понятный гайд для новичков и ответы на частые вопросы.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₿</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html"><span class="logo-mark">H</span>HARD<span class="grad">&nbsp;CRYPTO</span></a>
+      <div class="nav-links">
+        <a href="index.html">Главная</a>
+        <a href="markets.html">Графики</a>
+        <a href="converter.html">Конвертер</a>
+        <a href="guide.html">Гайд</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <a class="btn btn-primary" href="converter.html" style="padding:10px 20px;font-size:14px">Конвертер</a>
+    </nav>
+  </header>
+
+  <div class="ticker"><div class="ticker-track" id="tickerTrack"><span class="tick">Загружаем курсы…</span></div></div>
+
+  <main id="top">
+    <!-- HERO -->
+    <div class="hero">
+      <span class="eyebrow">⛓ Крипта без воды и хайпа</span>
+      <h1>HARD CRYPTO — <span class="grad">цифровые деньги нового поколения</span></h1>
+      <p class="lead">Актуальные курсы, наглядные графики и конвертер валют в одном месте. Понятно, честно и без обещаний золотых гор.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="markets.html">📈 Графики цен</a>
+        <a class="btn btn-ghost" href="converter.html">🔄 Конвертер валют</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>20 000+</b><span>монет на рынке</span></div>
+        <div class="stat"><b>≈ $3 трлн</b><span>капитализация рынка</span></div>
+        <div class="stat"><b>500+ млн</b><span>владельцев по всему миру</span></div>
+      </div>
+    </div>
+
+    <!-- РАЗДЕЛЫ САЙТА -->
+    <section id="sections" style="padding-top:20px">
+      <div class="sec-head reveal">
+        <div class="kicker">Инструменты</div>
+        <h2>Что есть на сайте</h2>
+      </div>
+      <div class="grid">
+        <a class="card link-card reveal" href="markets.html">
+          <div class="icon">📈</div>
+          <h3>Графики цен</h3>
+          <p>Динамика цены любой ключевой монеты: за неделю, месяц, квартал или год — со статистикой роста и минимумами.</p>
+          <span class="go">Открыть графики →</span>
+        </a>
+        <a class="card link-card reveal" href="converter.html">
+          <div class="icon">🔄</div>
+          <h3>Конвертер валют</h3>
+          <p>Перевод между bitcoin, ethereum и другими монетами и фиатами: доллар, евро, рубль — по живым курсам.</p>
+          <span class="go">Открыть конвертер →</span>
+        </a>
+        <a class="card link-card reveal" href="guide.html">
+          <div class="icon">📖</div>
+          <h3>Гайд новичка</h3>
+          <p>Что такое блокчейн и криптовалюта простыми словами, и с чего начать первые шаги в рынке.</p>
+          <span class="go">Читать гайд →</span>
+        </a>
+        <a class="card link-card reveal" href="faq.html">
+          <div class="icon">❓</div>
+          <h3>FAQ</h3>
+          <p>Ответы на частые вопросы: законность, безопасность, мошенники и с какой суммы начинать.</p>
+          <span class="go">Читать FAQ →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- КУРСЫ -->
+    <section id="coins">
+      <div class="sec-head reveal">
+        <div class="kicker">Рынок сейчас</div>
+        <h2>Топ монет по капитализации</h2>
+        <p>Курсы обновляются автоматически из открытых источников. Зелёный — рост за сутки, красный — падение.</p>
+      </div>
+      <div class="coin-list reveal">
+        <div class="coin-row head">
+          <div>#</div>
+          <div>Монета</div>
+          <div class="r">Цена</div>
+          <div class="r">24 ч</div>
+          <div class="r cap cap-col">Капитализация</div>
+        </div>
+        <div id="coinsBody">
+          <div class="skel"><div class="bar" style="max-width:60px"></div><div class="bar" style="max-width:220px"></div><div class="bar" style="max-width:120px"></div><div class="bar" style="max-width:90px"></div></div>
+          <div class="skel"><div class="bar" style="max-width:60px"></div><div class="bar" style="max-width:200px"></div><div class="bar" style="max-width:120px"></div><div class="bar" style="max-width:90px"></div></div>
+          <div class="skel"><div class="bar" style="max-width:60px"></div><div class="bar" style="max-width:230px"></div><div class="bar" style="max-width:120px"></div><div class="bar" style="max-width:90px"></div></div>
+        </div>
+      </div>
+      <div class="src-note" id="srcNote">Загрузка данных…</div>
+    </section>
+
+    <!-- КВИЗ -->
+    <section id="quiz">
+      <div class="sec-head reveal">
+        <div class="kicker">Проверь себя</div>
+        <h2>Мини-тест: что ты знаешь о крипте?</h2>
+        <p>Пять коротких вопросов — узнай свой уровень и повтори основные термины.</p>
+      </div>
+      <div class="quiz reveal" id="quizCard"></div>
+    </section>
+
+    <!-- ПРЕДУПРЕЖДЕНИЕ -->
+    <section style="padding-top:0">
+      <div class="warn reveal">
+        <div class="icon">⚠️</div>
+        <p><b>Важно о рисках.</b> Криптовалюты — волатильный актив: цена может заметно меняться за считанные часы. Никогда не инвестируйте больше, чем готовы потерять, и не доверяйте обещаниям гарантированной доходности.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-logo">⛏ HARD CRYPTO</div>
+    <p>Сайт носит информационный характер и не является инвестиционной рекомендацией.<br>Криптовалюты — волатильный актив. Не инвестируйте больше, чем готовы потерять.</p>
+    <p style="margin-top:14px">© 2026 Hard Crypto</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
